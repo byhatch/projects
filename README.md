@@ -101,13 +101,13 @@
 
     **Accessing MailHog Web Interface**
     Open browser on Windows VM and navigate to:
-    http://10.0.2.15:8025
+    `http://10.0.2.15:8025`
 
     The MailHog web UI should load, showing captured emails.
 
 
     **Sending Test Emails Using msmtp**
-    Send a basic test email from Kali, from ScaNattacker@kali.local to test@example.com:
+    Send a basic test email from Kali, from `ScaNattacker@kali.local` to `test@example.com`:
 
     echo -e "From: `ScaNattacker@kali.local`\nTo: `test@example.com`\nSubject: Test Email\n\nThis is a simple test email." | msmtp `test@example.com`
 
@@ -148,9 +148,10 @@
 
    **Logging**
    The SMTP client (msmtp) logs all sending activity to ~/.msmtp.log. Use this log to troubleshoot any mail delivery issues.
+   ```powershell
    Aug 10 07:47:13 host=127.0.0.1 tls=off auth=off from=`test@kali.local`>
    Aug 10 08:00:32 host=127.0.0.1 tls=off auth=off from=`ScaNattacker@kali.local`>
-
+   ```
 
 
    **Summary**
