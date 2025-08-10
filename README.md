@@ -68,26 +68,27 @@
 
    
  3. **Secure the configuration file permissions:**
-
+     ```bash
     chmod 600 ~/.msmtprc
-
+     ```
 
  4. **MailHog Installation and Setup**
     Install Go programming environment (required to install MailHog):
-
+     ```bash
     sudo apt install golang-go -y
     go install github.com/mailhog/MailHog@latest
-
+   
     ~/go/bin/MailHog **#confirm binary location**
-
+     ```
     **Run MailHog binary location:**
     [HTTP] Binding to address: 0.0.0.0:8025
     [SMTP] Binding to address: 0.0.0.0:1025
 
     **Add MailHog binary to PATH permanently:**
+    ```bash
     echo 'export PATH=$PATH:~/go/bin' >> ~/.bashrc
     source ~/.bashrc
-
+    ```
 
     **Firewall and Port Verification from Windows**
     From an elevated PowerShell prompt on Windows, verify connectivity to Kali's MailHog ports:
@@ -108,9 +109,9 @@
 
     **Sending Test Emails Using msmtp**
     Send a basic test email from Kali, from `ScaNattacker@kali.local` to `test@example.com`:
-
+    ```bash
     echo -e "From: `ScaNattacker@kali.local`\nTo: `test@example.com`\nSubject: Test Email\n\nThis is a simple test email." | msmtp `test@example.com`
-
+    ```
     //
     **Email with Attachement**
     echo “this is the content of the attachment.” > attachment.txt
@@ -142,8 +143,9 @@
 
 
    **Sent email:**
+   ```bash
    msmtp `test@example.com` < mail.txt
-
+   ```
 
 
    **Logging**
