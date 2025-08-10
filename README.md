@@ -62,7 +62,7 @@
     account        mailhog
     host           127.0.0.1
     port           1025
-    from          'ScaNattacker@kali.local'
+    from          `ScaNattacker@kali.local`
 
     account default : mailhog
 
