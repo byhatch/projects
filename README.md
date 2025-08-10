@@ -53,7 +53,7 @@
    sudo apt install msmtp msmtp-mta -y
    
 2. **Create configuration file ~/.msmtprc with:**
-
+   ```bash
     defaults
     auth           off
     tls            off
@@ -65,7 +65,7 @@
     from          `ScaNattacker@kali.local`
 
     account default : mailhog
-
+   ```
    
  3. **Secure the configuration file permissions:**
      ```bash
