@@ -62,7 +62,7 @@
     account        mailhog
     host           127.0.0.1
     port           1025
-    from           ScaNattacker@kali.local
+    from          'ScaNattacker@kali.local'
 
     account default : mailhog
 
@@ -108,7 +108,7 @@
     **Sending Test Emails Using msmtp**
     Send a basic test email from Kali, from ScaNattacker@kali.local to test@example.com:
 
-    echo -e "From: ScaNattacker@kali.local\nTo: test@example.com\nSubject: Test Email\n\nThis is a simple test email." | msmtp test@example.com
+    echo -e "From: 'ScaNattacker@kali.local'\nTo: 'test@example.com'\nSubject: Test Email\n\nThis is a simple test email." | msmtp 'test@example.com'
 
     //
     **Email with Attachement**
@@ -117,7 +117,7 @@
     **Create MIME email with attachment:**
 
     cat > mail.txt <<EOF
-    From: ScaNattacker@kali.local
+    From: 'ScaNattacker@kali.local'
     To: test@example.com
     Subject: Email with Attachment
     MIME-Version: 1.0
@@ -139,16 +139,16 @@
     EOF
 
 
-_
+
    **Sent email:**
-   msmtp test@example.com < mail.txt
+   msmtp 'test@example.com' < mail.txt
 
 
-_
+
    **Logging**
    The SMTP client (msmtp) logs all sending activity to ~/.msmtp.log. Use this log to troubleshoot any mail delivery issues.
-   Aug 10 07:47:13 host=127.0.0.1 tls=off auth=off from=test@kali.local>
-   Aug 10 08:00:32 host=127.0.0.1 tls=off auth=off from=ScaNattacker@kali.local>
+   Aug 10 07:47:13 host=127.0.0.1 tls=off auth=off from='test@kali.local'>
+   Aug 10 08:00:32 host=127.0.0.1 tls=off auth=off from='ScaNattacker@kali.local'>
 
 
 
