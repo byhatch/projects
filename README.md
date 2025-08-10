@@ -91,9 +91,10 @@
 
     **Firewall and Port Verification from Windows**
     From an elevated PowerShell prompt on Windows, verify connectivity to Kali's MailHog ports:
+    ```powershell
     Test-NetConnection -ComputerName 10.0.2.15 -Port 8025  # HTTP interface
     Test-NetConnection -ComputerName 10.0.2.15 -Port 1025  # SMTP interface
-
+    ```
 
     Both tests should succeed.
 
